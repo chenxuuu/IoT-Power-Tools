@@ -90,6 +90,7 @@ pub fn connect_usb() {
                         }
                     }
                     data.clear();
+                    thread::sleep(Duration::from_millis(250));//延时，防止卡死
                 }
             }
             thread::sleep(Duration::from_secs(1));//延时，防止卡死
