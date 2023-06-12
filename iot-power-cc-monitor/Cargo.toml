@@ -8,3 +8,23 @@ edition = "2021"
 [dependencies]
 sysinfo = "0.29"
 nvml-wrapper = "0.9"
+tray-icon = "0.5"
+rusb = "0.9"
+lazy_static = "1.4"
+chrono = "0.4"
+
+[profile.release]
+lto = true
+strip = true
+panic = "abort"
+
+
+# ~/.cargo/config
+# [target.x86_64-pc-windows-msvc]
+# rustflags = ["-C", "target-feature=+crt-static"]
+# [target.i686-pc-windows-msvc]
+# rustflags = ["-C", "target-feature=+crt-static"]
+
+#编译x86目标的dll
+#rustup target add i686-pc-windows-msvc
+#cargo build --release --target=i686-pc-windows-msvc
